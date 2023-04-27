@@ -47,7 +47,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "deploy": "git branch -d gh-pages && gh-pages -d build -b gh-pages",
+        "deploy": "git push origin --delete gh-pages && gh-pages -d build -b gh-pages",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
