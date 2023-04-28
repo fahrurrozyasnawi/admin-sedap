@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/admin-sedap/static/css/main.e1f2bb6b.css",
-    "main.js": "/admin-sedap/static/js/main.b5164dd4.js",
+    "main.js": "/admin-sedap/static/js/main.aefdd606.js",
     "static/js/243.3d643f80.chunk.js": "/admin-sedap/static/js/243.3d643f80.chunk.js",
     "static/js/180.fc117795.chunk.js": "/admin-sedap/static/js/180.fc117795.chunk.js",
     "static/js/357.fca70839.chunk.js": "/admin-sedap/static/js/357.fca70839.chunk.js",
@@ -22,6 +22,6 @@
   },
   "entrypoints": [
     "static/css/main.e1f2bb6b.css",
-    "static/js/main.b5164dd4.js"
+    "static/js/main.aefdd606.js"
   ]
 }
