@@ -23,7 +23,7 @@ const root = createRoot(container); // createRoot(container!) if you use TypeScr
 root.render(
     <StrictMode>
         <ReduxProvider store={store}>
-            <BrowserRouter basename="/">
+            <BrowserRouter basename="/admin-sedap">
                 <App />
             </BrowserRouter>
         </ReduxProvider>
