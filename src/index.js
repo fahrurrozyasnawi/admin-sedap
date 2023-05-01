@@ -15,6 +15,8 @@ import 'assets/third-party/apex-chart.css';
 import App from './App';
 import { store } from 'store';
 import reportWebVitals from './reportWebVitals';
+import MultiProvider from 'configs/MultiProvider';
+import UserProvider from 'contexts/UserContext';
 
 // ==============================|| MAIN - REACT DOM RENDER  ||============================== //
 
@@ -24,7 +26,9 @@ root.render(
     <StrictMode>
         <ReduxProvider store={store}>
             <BrowserRouter basename="/admin-sedap">
-                <App />
+                <MultiProvider providers={[<UserProvider />]}>
+                    <App />
+                </MultiProvider>
             </BrowserRouter>
         </ReduxProvider>
     </StrictMode>
