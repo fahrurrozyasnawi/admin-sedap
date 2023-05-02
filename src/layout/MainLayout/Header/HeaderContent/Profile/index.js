@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -28,6 +28,7 @@ import SettingTab from './SettingTab';
 // assets
 import avatar1 from 'assets/images/users/avatar-1.png';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import { UserContext } from 'contexts/UserContext';
 
 // tab panel wrapper
 function TabPanel({ children, value, index, ...other }) {
@@ -55,9 +56,10 @@ function a11yProps(index) {
 
 const Profile = () => {
     const theme = useTheme();
+    const { logout } = useContext(UserContext);
 
     const handleLogout = async () => {
-        // logout
+        logout();
     };
 
     const anchorRef = useRef(null);

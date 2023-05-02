@@ -11,6 +11,11 @@ const getRefreshTokenFromLocalStorage = () => {
     return localStorage.getItem('refresh_token');
 };
 
+const removeTokensFromLocalStorage = () => {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
+};
+
 export const UserContext = createContext({});
 
 const UserProvider = (props) => {
@@ -28,11 +33,6 @@ const UserProvider = (props) => {
             localStorage.setItem(type, token);
             setRefreshToken(token);
         }
-    };
-
-    const removeTokensFromLocalStorage = () => {
-        localStorage.removeItem('access_token');
-        localStorage.removeItem('refresh_token');
     };
 
     const login = async (data) => {
@@ -54,7 +54,10 @@ const UserProvider = (props) => {
 
                 navigate('/');
             })
-            .catch((err) => console.log('err', err));
+            .catch((err) => {
+                console.log('err', err);
+                throw Error(err);
+            });
     };
 
     const checkExpiration = () => {

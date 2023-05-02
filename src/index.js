@@ -2,6 +2,10 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
+// custom router
+import CustomRouter from 'routes/CustomRouter/index';
+import history from 'routes/CustomRouter/history';
+
 // scroll bar
 import 'simplebar/src/simplebar.css';
 
@@ -24,13 +28,15 @@ const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(
     <StrictMode>
-        <ReduxProvider store={store}>
-            <BrowserRouter basename="/admin-sedap">
+        <CustomRouter basename="/admin-sedap" history={history}>
+            <ReduxProvider store={store}>
+                {/* <BrowserRouter basename="/admin-sedap"> */}
                 <MultiProvider providers={[<UserProvider />]}>
                     <App />
                 </MultiProvider>
-            </BrowserRouter>
-        </ReduxProvider>
+                {/* </BrowserRouter> */}
+            </ReduxProvider>
+        </CustomRouter>
     </StrictMode>
 );
 
