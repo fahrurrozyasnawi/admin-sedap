@@ -28,7 +28,6 @@ api.interceptors.request.use(
                 removeTokensFromLocalStorage();
                 console.log('To login page');
                 history.replace('/admin-sedap/login');
-                console.log('harusnya ke login');
                 // return;
 
                 // throw error agar tidak melakukan request ke api
