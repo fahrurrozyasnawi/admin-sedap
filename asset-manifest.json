@@ -1,20 +1,17 @@
 {
   "files": {
     "main.css": "/admin-sedap/static/css/main.e1f2bb6b.css",
-    "main.js": "/admin-sedap/static/js/main.aefdd606.js",
-    "static/js/243.3d643f80.chunk.js": "/admin-sedap/static/js/243.3d643f80.chunk.js",
-    "static/js/180.fc117795.chunk.js": "/admin-sedap/static/js/180.fc117795.chunk.js",
-    "static/js/357.fca70839.chunk.js": "/admin-sedap/static/js/357.fca70839.chunk.js",
-    "static/js/525.29192954.chunk.js": "/admin-sedap/static/js/525.29192954.chunk.js",
+    "main.js": "/admin-sedap/static/js/main.7c4a2c2e.js",
+    "static/js/357.10647e1e.chunk.js": "/admin-sedap/static/js/357.10647e1e.chunk.js",
     "static/js/893.fb876e3f.chunk.js": "/admin-sedap/static/js/893.fb876e3f.chunk.js",
     "static/js/165.e6941318.chunk.js": "/admin-sedap/static/js/165.e6941318.chunk.js",
     "static/js/346.314c7b67.chunk.js": "/admin-sedap/static/js/346.314c7b67.chunk.js",
-    "static/js/819.b9d76dd9.chunk.js": "/admin-sedap/static/js/819.b9d76dd9.chunk.js",
+    "static/js/637.7e5904e4.chunk.js": "/admin-sedap/static/js/637.7e5904e4.chunk.js",
+    "static/js/555.530c19fb.chunk.js": "/admin-sedap/static/js/555.530c19fb.chunk.js",
     "static/js/522.38a07947.chunk.js": "/admin-sedap/static/js/522.38a07947.chunk.js",
-    "static/js/260.08efe2c7.chunk.js": "/admin-sedap/static/js/260.08efe2c7.chunk.js",
-    "static/js/252.944a07e4.chunk.js": "/admin-sedap/static/js/252.944a07e4.chunk.js",
-    "static/js/120.6958e9b3.chunk.js": "/admin-sedap/static/js/120.6958e9b3.chunk.js",
-    "static/js/634.8f4391f4.chunk.js": "/admin-sedap/static/js/634.8f4391f4.chunk.js",
+    "static/js/16.6f839db6.chunk.js": "/admin-sedap/static/js/16.6f839db6.chunk.js",
+    "static/js/252.920ac058.chunk.js": "/admin-sedap/static/js/252.920ac058.chunk.js",
+    "static/js/120.d0d6052e.chunk.js": "/admin-sedap/static/js/120.d0d6052e.chunk.js",
     "index.html": "/admin-sedap/index.html",
     "static/media/google.svg": "/admin-sedap/static/media/google.a025da87054139fc16b3b9b7ed0a2724.svg",
     "static/media/twitter.svg": "/admin-sedap/static/media/twitter.3e49f64208e00f377e9c3dbeaed797ce.svg",
@@ -22,6 +19,6 @@
   },
   "entrypoints": [
     "static/css/main.e1f2bb6b.css",
-    "static/js/main.aefdd606.js"
+    "static/js/main.7c4a2c2e.js"
   ]
 }
