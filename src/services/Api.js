@@ -27,7 +27,9 @@ api.interceptors.request.use(
                 // navigate to login page
                 removeTokensFromLocalStorage();
                 console.log('To login page');
-                return history.replace('/admin-sedap/login');
+                history.replace('/admin-sedap/login');
+                console.log('harusnya ke login');
+                // return;
 
                 // throw error agar tidak melakukan request ke api
                 throw new Error('Refresh Token Expired');
