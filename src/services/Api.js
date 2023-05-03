@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { isExpired } from 'react-jwt';
-import history from 'routes/CustomRouter/history';
+// import history from 'routes/CustomRouter/history';
 
 let isRefreshing = false;
 let refreshQueue = [];
@@ -30,10 +30,12 @@ api.interceptors.request.use(
                 // navigate to login page
                 removeTokensFromLocalStorage();
                 console.log('To login page');
-                history.replace('/admin-sedap/login');
-                window.location.reload();
+                window.location.href = '/admin-sedap/login';
+                // history.replace('/admin-sedap/login');
+                // window.location.reload();
 
-                throw new Error('Refresh Token Expired');
+                // throw new Error('Refresh Token Expired');
+                return;
             } else {
                 // check access token expire
                 if (accessTokenIsExpired) {

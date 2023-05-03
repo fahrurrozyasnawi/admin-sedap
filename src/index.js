@@ -28,15 +28,15 @@ const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(
     <StrictMode>
-        <CustomRouter basename="/admin-sedap" history={history}>
-            <ReduxProvider store={store}>
-                {/* <BrowserRouter basename="/admin-sedap"> */}
+        {/* <CustomRouter basename="/admin-sedap" history={history}> */}
+        <ReduxProvider store={store}>
+            <BrowserRouter basename="/admin-sedap">
                 <MultiProvider providers={[<UserProvider />]}>
                     <App />
                 </MultiProvider>
-                {/* </BrowserRouter> */}
-            </ReduxProvider>
-        </CustomRouter>
+            </BrowserRouter>
+        </ReduxProvider>
+        {/* </CustomRouter> */}
     </StrictMode>
 );
 
