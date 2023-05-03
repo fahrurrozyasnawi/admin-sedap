@@ -2,6 +2,9 @@ import axios from 'axios';
 import { isExpired } from 'react-jwt';
 import history from 'routes/CustomRouter/history';
 
+let isRefreshing = false;
+let refreshQueue = [];
+
 const URL_API = 'http://localhost:5000';
 const api = axios.create({ baseURL: URL_API, headers: {} });
 
@@ -28,29 +31,46 @@ api.interceptors.request.use(
                 removeTokensFromLocalStorage();
                 console.log('To login page');
                 history.replace('/admin-sedap/login');
-                // return;
+                window.location.reload();
 
-                // throw error agar tidak melakukan request ke api
                 throw new Error('Refresh Token Expired');
             } else {
                 // check access token expire
                 if (accessTokenIsExpired) {
-                    // send refresh token api
-                    try {
-                        const data = { refreshToken };
-                        const refresh = await axios.post(`${URL_API}/refresh`, data);
-                        const newAccesToken = refresh.data.accessToken;
-                        const newRefreshToken = refresh.data.refreshToken;
+                    // if access token has expired and we're not alredy refreshing
+                    if (!isRefreshing) {
+                        isRefreshing = true;
+                        // send refresh token api
+                        try {
+                            const data = { refreshToken };
+                            const refresh = await axios.post(`${URL_API}/refresh`, data);
+                            const newAccesToken = refresh.data.accessToken;
+                            const newRefreshToken = refresh.data.refreshToken;
 
-                        // udpate tokens
-                        localStorage.setItem('access_token', newAccesToken);
-                        localStorage.setItem('refresh_token', newRefreshToken);
+                            // udpate tokens
+                            localStorage.setItem('access_token', newAccesToken);
+                            localStorage.setItem('refresh_token', newRefreshToken);
 
-                        console.log('succes refresh token');
-                    } catch (error) {
-                        throw new Error('Failed to refresh token');
+                            // Call all the requests that were waiting for the access token refresh
+                            refreshQueue.forEach((cb) => cb(newAccesToken));
+                            refreshQueue = [];
+                            isRefreshing = false;
+                            console.log('succes refresh token');
+                        } catch (error) {
+                            throw new Error('Failed to refresh token');
+                        }
                     }
+
+                    return new Promise((resolve) => {
+                        refreshQueue.push((token) => {
+                            config.headers.Authorization = `Bearer ${token}`;
+                            resolve(config);
+                        });
+                    });
                 }
+
+                // If the access token has not expired, set the Authorization header
+                config.headers.Authorization = `Bearer ${accessToken}`;
             }
         }
 
