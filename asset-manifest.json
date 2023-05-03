@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/admin-sedap/static/css/main.e1f2bb6b.css",
-    "main.js": "/admin-sedap/static/js/main.7c4a2c2e.js",
+    "main.js": "/admin-sedap/static/js/main.f439a7e5.js",
     "static/js/357.10647e1e.chunk.js": "/admin-sedap/static/js/357.10647e1e.chunk.js",
     "static/js/893.fb876e3f.chunk.js": "/admin-sedap/static/js/893.fb876e3f.chunk.js",
     "static/js/165.e6941318.chunk.js": "/admin-sedap/static/js/165.e6941318.chunk.js",
     "static/js/346.314c7b67.chunk.js": "/admin-sedap/static/js/346.314c7b67.chunk.js",
-    "static/js/637.7e5904e4.chunk.js": "/admin-sedap/static/js/637.7e5904e4.chunk.js",
-    "static/js/555.530c19fb.chunk.js": "/admin-sedap/static/js/555.530c19fb.chunk.js",
+    "static/js/637.7832e45b.chunk.js": "/admin-sedap/static/js/637.7832e45b.chunk.js",
+    "static/js/555.58b5a069.chunk.js": "/admin-sedap/static/js/555.58b5a069.chunk.js",
     "static/js/522.38a07947.chunk.js": "/admin-sedap/static/js/522.38a07947.chunk.js",
     "static/js/16.6f839db6.chunk.js": "/admin-sedap/static/js/16.6f839db6.chunk.js",
     "static/js/252.920ac058.chunk.js": "/admin-sedap/static/js/252.920ac058.chunk.js",
@@ -19,6 +19,6 @@
   },
   "entrypoints": [
     "static/css/main.e1f2bb6b.css",
-    "static/js/main.7c4a2c2e.js"
+    "static/js/main.f439a7e5.js"
   ]
 }
