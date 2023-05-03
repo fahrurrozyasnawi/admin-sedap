@@ -4,6 +4,7 @@ import api from 'services/Api';
 
 // project import
 import MainCard from 'components/MainCard';
+import { useEffect } from 'react';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
@@ -14,6 +15,41 @@ const SamplePage = () => {
             .then((res) => console.log('res ', res))
             .catch((err) => console.log('Err ', err));
     };
+
+    const sendMultiReq = () => {
+        api.get('/test')
+            .then((res) => console.log('res ', res))
+            .catch((err) => console.log('Err ', err));
+        api.get('/sample1')
+            .then((res) => console.log('res ', res))
+            .catch((err) => console.log('Err ', err));
+        api.get('/sample2')
+            .then((res) => console.log('res ', res))
+            .catch((err) => console.log('Err ', err));
+
+        console.log('send multi req ');
+    };
+    const sendAsyncMultiReq = async () => {
+        await api
+            .get('/test')
+            .then((res) => console.log('res ', res))
+            .catch((err) => console.log('Err ', err));
+        await api
+            .get('/sample1')
+            .then((res) => console.log('res ', res))
+            .catch((err) => console.log('Err ', err));
+        await api
+            .get('/sample2')
+            .then((res) => console.log('res ', res))
+            .catch((err) => console.log('Err ', err));
+
+        console.log('send multi req with async func');
+    };
+
+    useEffect(() => {
+        sendMultiReq();
+        sendAsyncMultiReq();
+    }, []);
 
     return (
         <>
