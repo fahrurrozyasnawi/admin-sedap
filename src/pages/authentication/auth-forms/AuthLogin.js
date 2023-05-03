@@ -65,7 +65,7 @@ const AuthLogin = () => {
                         setStatus({ success: false });
                         setErrors({ submit: err.message });
                         setSubmitting(false);
-                        console.log('err happen');
+                        console.log('err happen', err);
                     }
                     // const results = await login(values);
 
