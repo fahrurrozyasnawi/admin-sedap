@@ -3,6 +3,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { isExpired } from 'react-jwt';
 
+// Hokks
+import useRoles from 'hooks/useRoles';
+
 const getAccessTokenFromLocalStorage = () => {
     return localStorage.getItem('access_token');
 };
@@ -23,6 +26,8 @@ const UserProvider = (props) => {
     const [isAuth, setIsAuth] = useState(!!localStorage.getItem('refresh_token'));
     const [accessToken, setAccessToken] = useState(null);
     const [refreshToken, setRefreshToken] = useState(null);
+
+    const { getDataMenu } = useRoles();
 
     const saveTokensToLocalStorage = (type, token) => {
         if (type === 'access_token') {
@@ -53,6 +58,8 @@ const UserProvider = (props) => {
                 setIsAuth(true);
 
                 navigate('/');
+                // Get Data Menu
+                getDataMenu();
             })
             .catch((err) => {
                 console.log('err', err);

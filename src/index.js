@@ -21,6 +21,7 @@ import { store } from 'store';
 import reportWebVitals from './reportWebVitals';
 import MultiProvider from 'configs/MultiProvider';
 import UserProvider from 'contexts/UserContext';
+import { RolesProvider } from 'contexts/rolesContext';
 
 // ==============================|| MAIN - REACT DOM RENDER  ||============================== //
 
@@ -31,7 +32,7 @@ root.render(
         {/* <CustomRouter basename="/admin-sedap" history={history}> */}
         <ReduxProvider store={store}>
             <BrowserRouter basename="/admin-sedap">
-                <MultiProvider providers={[<UserProvider />]}>
+                <MultiProvider providers={[<UserProvider />, <RolesProvider />]}>
                     <App />
                 </MultiProvider>
             </BrowserRouter>
